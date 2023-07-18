@@ -31,7 +31,15 @@ node {
         
         }
         
-    
+     stage('RunningImages') {
+
+         sh '''
+          docker run -d -p 7777:80 mannam786/webpage:latest
+          docker ps
+           
+         '''
+    }
+
   
    
 }
