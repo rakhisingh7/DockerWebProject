@@ -26,7 +26,9 @@ node {
         docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
-      
+      /* permission to provide docker.sock after got error 
+      * cd /var/run
+      * chmod 777 docker.sock */
              }
         
         }
