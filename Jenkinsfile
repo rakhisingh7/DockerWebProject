@@ -32,8 +32,12 @@ node {
              }
         
         }
-        
-     
-  
-   
+
+
+	stage('Cluster info') {
+		sh '''
+		aws eks update-kubeconfig --region us-east-1 --name myeks-cluster
+		kubectl get nodes
+		'''
+	}
 }
