@@ -38,6 +38,8 @@ node {
 		sh '''
 		aws eks update-kubeconfig --region us-east-1 --name myeks-cluster
 		kubectl get nodes
+  		kubectl create -f nginx-pod.yml
+    		kubectl get pods
 		'''
 	}
 }
